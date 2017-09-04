@@ -5,6 +5,7 @@
  */
 
 import React, {Component, ViewPropTypes} from 'react';
+import Icon from 'react-native-vector-icons/Ionicons'
 import {
     AppRegistry,
     StyleSheet,
@@ -44,8 +45,9 @@ class Son extends Component {
         return (
             <TabBarIOS
                 tintColor="#ee7354">
-                <TabBarIOS.Item
-                    icon={{uri: base64Icon, scale: 3}}
+                <Icon.TabBarItem
+                    title="发现"
+                    systemIcon="history"
                     selected={this.state.selectedTab === 'blueTab'}
                     onPress={() => {
             this.setState({
@@ -53,7 +55,7 @@ class Son extends Component {
             });
           }}>
                     {this._renderContent('#fff', 'first')}
-                </TabBarIOS.Item>
+                </Icon.TabBarItem>
                 <TabBarIOS.Item
                     systemIcon="history"
                     selected={this.state.selectedTab === 'redTab'}
@@ -66,6 +68,7 @@ class Son extends Component {
                     {this._renderContent('#fff', 'middle', this.state.notifCount)}
                 </TabBarIOS.Item>
                 <TabBarIOS.Item
+                    title="end"
                     icon={{uri: base64Icon, scale: 3}}
                     selected={this.state.selectedTab === 'greenTab'}
                     onPress={() => {
